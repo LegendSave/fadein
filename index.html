@@ -9,18 +9,15 @@
   <body>
     <canvas></canvas>
     <script>
-      const canvas = document.querySelector('canvas');
-      const ctx = canvas.getContext("2d");
+        const canvas = document.querySelector('canvas');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        var c = canvas.getContext("2d");
 
-      for (let i = 0; i < 6; i++) {
-        for (let j = 0; j < 6; j++) {
-          ctx.fillStyle = `rgb(
-        ${Math.floor(255 - 42.5 * i)},
-        ${Math.floor(255 - 42.5 * j)},
-        0)`;
-          ctx.fillRect(j * 25, i * 25, 25, 25);
-        }
-      }
+        c.beginPath();
+        c.fillStyle =  `rgb(255, 255, 255)`
+        c.fillRect(0,0,canvas.width, canvas.height);
+        c.fill();
     </script>
   </body>
 </html>
